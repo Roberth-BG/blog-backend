@@ -7,15 +7,15 @@ Frontend built with **Angular** (separate repository).
 
 ## 🚀 Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Language | Java 17 |
-| Framework | Spring Boot 3.x |
-| Security | Spring Security + JWT |
-| ORM | Spring Data JPA / Hibernate |
-| Database | MySQL 8 |
-| Documentation | Swagger / OpenAPI 3 |
-| Build Tool | Maven |
+| Layer         | Technology                  |
+| ------------- | --------------------------- |
+| Language      | Java 17                     |
+| Framework     | Spring Boot 3.x             |
+| Security      | Spring Security + JWT       |
+| ORM           | Spring Data JPA / Hibernate |
+| Database      | MySQL 8                     |
+| Documentation | Swagger / OpenAPI 3         |
+| Build Tool    | Maven                       |
 
 ---
 
@@ -62,17 +62,17 @@ MySQL database with **logical deletion** (`activo` field) and **multimedia suppo
 
 ### Tables
 
-| Table | Description |
-|---|---|
-| `roles` | User roles: ADMIN, EDITOR, LECTOR |
-| `usuarios` | Users with email verification and login security |
-| `usuario_roles` | Many-to-many: users ↔ roles |
-| `categorias` | Post categories with slug |
-| `tags` | Post tags with slug |
-| `posts` | Blog posts (LONGTEXT content, no limit) |
-| `post_tags` | Many-to-many: posts ↔ tags |
-| `post_archivos` | Multimedia files attached to posts |
-| `comentarios` | Post comments with moderation |
+| Table           | Description                                      |
+| --------------- | ------------------------------------------------ |
+| `roles`         | User roles: ADMIN, EDITOR, LECTOR                |
+| `usuarios`      | Users with email verification and login security |
+| `usuario_roles` | Many-to-many: users ↔ roles                      |
+| `categorias`    | Post categories with slug                        |
+| `tags`          | Post tags with slug                              |
+| `posts`         | Blog posts (LONGTEXT content, no limit)          |
+| `post_tags`     | Many-to-many: posts ↔ tags                       |
+| `post_archivos` | Multimedia files attached to posts               |
+| `comentarios`   | Post comments with moderation                    |
 
 ### Key design decisions
 
@@ -98,10 +98,10 @@ uploads/
 
 ### Database triggers
 
-| Trigger | Action |
-|---|---|
+| Trigger                  | Action                                                                 |
+| ------------------------ | ---------------------------------------------------------------------- |
 | `tr_usuarios_verificado` | Cleans verification code and sets `activo=TRUE` when email is verified |
-| `tr_posts_published_at` | Auto-sets `published_at` when post status changes to PUBLISHED |
+| `tr_posts_published_at`  | Auto-sets `published_at` when post status changes to PUBLISHED         |
 
 ---
 
@@ -109,11 +109,11 @@ uploads/
 
 JWT-based authentication with role-based access control.
 
-| Role | Permissions |
-|---|---|
-| `ADMIN` | Full access: manage users, posts, comments, categories |
-| `EDITOR` | Create, edit and publish own posts; moderate comments |
-| `LECTOR` | Read published posts and comment |
+| Role     | Permissions                                            |
+| -------- | ------------------------------------------------------ |
+| `ADMIN`  | Full access: manage users, posts, comments, categories |
+| `EDITOR` | Create, edit and publish own posts; moderate comments  |
+| `LECTOR` | Read published posts and comment                       |
 
 ### Security features
 
@@ -126,23 +126,23 @@ JWT-based authentication with role-based access control.
 
 ## 📡 API Endpoints (planned)
 
-| Method | Route | Role | Description |
-|---|---|---|---|
-| POST | `/api/auth/registro` | Public | Register new user |
-| POST | `/api/auth/login` | Public | Login, returns JWT |
-| POST | `/api/auth/verificar` | Public | Verify email with code |
-| GET | `/api/posts` | Public | List published posts |
-| GET | `/api/posts/slug/{slug}` | Public | Get post by slug |
-| POST | `/api/posts` | EDITOR/ADMIN | Create post |
-| PUT | `/api/posts/{id}` | EDITOR/ADMIN | Update post |
-| DELETE | `/api/posts/{id}` | ADMIN | Deactivate post |
-| GET | `/api/usuarios` | ADMIN | List all users |
-| PUT | `/api/usuarios/{id}/activar` | ADMIN | Activate/deactivate user |
-| POST | `/api/upload/avatar` | Auth | Upload user avatar |
-| POST | `/api/upload/post/{id}/portada` | EDITOR/ADMIN | Upload post cover image |
-| GET | `/api/categorias` | Public | List categories |
-| GET | `/api/tags` | Public | List tags |
-| GET | `/api/comentarios` | ADMIN | List comments for moderation |
+| Method | Route                           | Role         | Description                  |
+| ------ | ------------------------------- | ------------ | ---------------------------- |
+| POST   | `/api/auth/registro`            | Public       | Register new user            |
+| POST   | `/api/auth/login`               | Public       | Login, returns JWT           |
+| POST   | `/api/auth/verificar`           | Public       | Verify email with code       |
+| GET    | `/api/posts`                    | Public       | List published posts         |
+| GET    | `/api/posts/slug/{slug}`        | Public       | Get post by slug             |
+| POST   | `/api/posts`                    | EDITOR/ADMIN | Create post                  |
+| PUT    | `/api/posts/{id}`               | EDITOR/ADMIN | Update post                  |
+| DELETE | `/api/posts/{id}`               | ADMIN        | Deactivate post              |
+| GET    | `/api/usuarios`                 | ADMIN        | List all users               |
+| PUT    | `/api/usuarios/{id}/activar`    | ADMIN        | Activate/deactivate user     |
+| POST   | `/api/upload/avatar`            | Auth         | Upload user avatar           |
+| POST   | `/api/upload/post/{id}/portada` | EDITOR/ADMIN | Upload post cover image      |
+| GET    | `/api/categorias`               | Public       | List categories              |
+| GET    | `/api/tags`                     | Public       | List tags                    |
+| GET    | `/api/comentarios`              | ADMIN        | List comments for moderation |
 
 Full interactive documentation available at `/swagger-ui.html` when running locally.
 
@@ -197,6 +197,7 @@ http://localhost:8080/swagger-ui.html
 ## 🗂️ Development Roadmap
 
 ### ✅ Phase 1 — Database (completed)
+
 - [x] Database schema design (9 tables)
 - [x] Logical deletion strategy
 - [x] Multimedia file storage design
@@ -204,6 +205,7 @@ http://localhost:8080/swagger-ui.html
 - [x] Database triggers
 
 ### 🔄 Phase 2 — Backend (in progress)
+
 - [ ] Project setup (pom.xml, application.properties)
 - [ ] JPA entities
 - [ ] Repositories
@@ -217,6 +219,7 @@ http://localhost:8080/swagger-ui.html
 - [ ] Swagger documentation
 
 ### ⏳ Phase 3 — Frontend (upcoming)
+
 - [ ] Angular project setup
 - [ ] Authentication module
 - [ ] Blog public view
