@@ -1,0 +1,19 @@
+# Variables sensibles
+.env
+
+# Archivos subidos
+uploads/
+
+# Compilados Java
+target/
+*.jar
+*.class
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
