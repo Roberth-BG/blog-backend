@@ -1,19 +1,78 @@
-# Variables sensibles
+# ─────────────────────────────────────────
+# VARIABLES SENSIBLES
+# ─────────────────────────────────────────
 .env
+.env.local
+.env.dev
+.env.prod
 
-# Archivos subidos
+# ─────────────────────────────────────────
+# ARCHIVOS SUBIDOS (generados en runtime)
+# ─────────────────────────────────────────
 uploads/
 
-# Compilados Java
+# ─────────────────────────────────────────
+# JAVA / MAVEN (compilados y empaquetados)
+# ─────────────────────────────────────────
 target/
 *.jar
+*.war
+*.ear
 *.class
 
-# IDE
+# Maven wrapper (opcional, algunos lo commitean)
+# .mvn/
+# mvnw
+# mvnw.cmd
+
+# ─────────────────────────────────────────
+# SPRING BOOT
+# ─────────────────────────────────────────
+# Logs generados por la app
+logs/
+*.log
+*.log.*
+
+# ─────────────────────────────────────────
+# VS CODE
+# ─────────────────────────────────────────
+.vscode/
+!.vscode/extensions.json   # ← este SÍ se comparte (extensiones recomendadas)
+
+# ─────────────────────────────────────────
+# INTELLIJ / IDEA (por si alguien del equipo lo usa)
+# ─────────────────────────────────────────
 .idea/
 *.iml
-.vscode/
+*.iws
+*.ipr
+out/
 
-# OS
+# ─────────────────────────────────────────
+# ECLIPSE / STS (Spring Tool Suite)
+# ─────────────────────────────────────────
+.classpath
+.project
+.settings/
+bin/
+
+# ─────────────────────────────────────────
+# SISTEMA OPERATIVO
+# ─────────────────────────────────────────
+# Mac
 .DS_Store
+.AppleDouble
+
+# Windows
 Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# ─────────────────────────────────────────
+# TESTS (reportes generados)
+# ─────────────────────────────────────────
+test-results/
+surefire-reports/
