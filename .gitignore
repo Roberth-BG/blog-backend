@@ -37,7 +37,7 @@ logs/
 # VS CODE
 # ─────────────────────────────────────────
 .vscode/
-!.vscode/extensions.json   # ← este SÍ se comparte (extensiones recomendadas)
+!.vscode/extensions.json
 
 # ─────────────────────────────────────────
 # INTELLIJ / IDEA (por si alguien del equipo lo usa)
