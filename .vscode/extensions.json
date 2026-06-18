@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "vscjava.vscode-java-pack",
+    "vmware.vscode-spring-boot",
+    "vscjava.vscode-spring-initializr",
+    "vscjava.vscode-lombok",
+    "redhat.vscode-xml",
+    "rangav.vscode-thunder-client",
+    "cweijan.vscode-mysql-client2",
+    "eamodio.gitlens",
+    "usernamehakki.errorlens"
+  ]
+}
